@@ -11,7 +11,7 @@ test('Login', async ({page})=> {
 
     await page.locator("#idSIButton9").click();
        // Providing the password by CSS and SELECTORHUB 
-    await page.locator("//input[@id='i0118']").fill("Ja!Pe#res@19$86_");
+    await page.locator("//input[@id='i0118']").fill("--");
        // Clicking on the "login" button using CSS
     await page.locator("#idSIButton9").click(); 
 
