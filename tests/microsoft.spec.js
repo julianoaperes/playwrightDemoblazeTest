@@ -11,22 +11,27 @@ test('Login', async ({page})=> {
 
     await page.locator("#idSIButton9").click();
        // Providing the password by CSS and SELECTORHUB 
-    await page.locator("//input[@id='i0118']").fill("--");
-       // Clicking on the "login" button using CSS
+    await page.locator("//input[@id='i0118']").fill("Ja!Pe#res@19$86_");
+       // Clicking on the "login" and 'yes' buttons using CSS
     await page.locator("#idSIButton9").click(); 
-
     await page.locator("#idSIButton9").click();
 
-    await page.goto('https://tsc-qa.ab-inbev.com/#/mid-year-review/requests');
 
-     await page.hover('div.c-dUEiTH > a > li.c-dUEiTH.c-cCFkOr.c-cCFkOr-dAlmDS-active-true.c-cCFkOr-IaaiB-isTriggerItem-true.c-dUEiTH-ihdDVLc-css');
+    await page.goto('https://tsc-qa.ab-inbev.com/#/my-targets/current');
+            
+      const myr_request=await page.locator("//li[@class='c-dUEiTH c-cCFkOr c-cCFkOr-dAlmDS-active-true c-cCFkOr-IaaiB-isTriggerItem-true c-dUEiTH-ihdDVLc-css']")
+      await myr_request.hover();
+      await page.waitForTimeout(5000);
+      await myr_request.click();
+      await page.waitForTimeout(5000);
 
-     await page.waitForSelector('data-radis-focus-guard tabindex=0 style=outline: none; opacity 0; position: fixed; pointer-events: none', {state: 'visible'});
      
-     await page.click('data-radis-focus-guard tabindex=0 style=outline: none; opacity 0; position: fixed; pointer-events: none');
-
-
 });
+    //li[@class='c-dUEiTH c-cCFkOr c-cCFkOr-dAlmDS-active-true c-cCFkOr-IaaiB-isTriggerItem-true c-dUEiTH-ihdDVLc-css']
+
+    //   .c-dUEiTH.c-cCFkOr.c-cCFkOr-dAlmDS-active-true.c-cCFkOr-IaaiB-isTriggerItem-true.c-dUEiTH-ihdDVLc-css
+
+
    
     //await page.locator("button[title='Actions']").click();
    // await page.locator("//span[@class='ant-typography c-cMILyz']").click();
